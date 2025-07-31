@@ -1,6 +1,5 @@
 #include <assert.h>
 #include <iostream>
-
 using namespace std;
 
 bool isTemperatureOk(float temperature) {
@@ -8,7 +7,6 @@ bool isTemperatureOk(float temperature) {
     cout << "Temperature out of range!\n";
     return false;
   }
-  
   return true;
 }
 
@@ -17,7 +15,6 @@ bool isSocOk(float soc) {
     cout << "State of Charge out of range!\n";
     return false;
   }
-
   return true;
 }
 
@@ -26,8 +23,7 @@ bool isChargeRateOk(float chargeRate) {
     cout << "Charge Rate out of range!\n";
     return false;
   }
-  
-  return true;
+    return true;
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
@@ -36,7 +32,8 @@ bool batteryIsOk(float temperature, float soc, float chargeRate) {
          isChargeRateOk(chargeRate);
 }
 
-    int main() {
-        assert(batteryIsOk(25, 70, 0.7) == true);
-        assert(batteryIsOk(50, 85, 0) == false);
-              }
+
+int main() {
+  assert(batteryIsOk(25, 70, 0.7) == true);
+  assert(batteryIsOk(50, 85, 0) == false);
+}
